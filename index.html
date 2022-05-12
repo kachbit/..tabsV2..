@@ -4,6 +4,7 @@
 	<style type="text/css">
 	textarea {
 		outline:0px none;
+		-moz-user-select: text;
 	}
 		 body,html
 {
@@ -162,7 +163,6 @@ function tabClick(event, tab) {
 		document.querySelector("#"+tab.panel).style.visibility = 'visible';
 		setTimeout(function() {
     		document.querySelector("#"+tab.panel).querySelector('textarea').focus()
-			console.log('focused')
 		}, 0);
 		
 	}
