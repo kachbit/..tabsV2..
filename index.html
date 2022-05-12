@@ -162,6 +162,7 @@ function tabClick(event, tab) {
 		document.querySelector("#"+tab.panel).style.visibility = 'visible';
 		setTimeout(function() {
     		document.querySelector("#"+tab.panel).querySelector('textarea').focus()
+			console.log('focused')
 		}, 0);
 		
 	}
