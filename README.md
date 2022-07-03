@@ -1,4 +1,4 @@
-[demo](demo.html) <br>
+[demo](https://kachbit.github.io/Tabs-V2/demo.html) <br>
 Embeddable sortable dynamic tabs. This was a fork of my previous tabs project which didn't really work at all and had way too many lines of code. This is the new and improved version that works much better and is written in much less code. It is based on a project I found on codepen ([https://codepen.io/mdcio/pen/eXppgR](https://codepen.io/mdcio/pen/eXppgR)). 
 
 Embedding the tabs:
