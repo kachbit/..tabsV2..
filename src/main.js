@@ -125,8 +125,8 @@ function newTab(text, content, type, path) {
 function newTabBtn() {
 	var newtab = newTab('+');
 	newtab.querySelector(".t-x").style.display = "none";
-	newtab.style.maxWidth = "25px";
-	newtab.style.minWidth = "25px";
+	newtab.style.maxWidth = "25px !important";
+	newtab.style.minWidth = "25px !important";
 	newtab.style.fontSize = ('40px');
 	newtab.draggable = false;
 	newtab.onclick = function() {
