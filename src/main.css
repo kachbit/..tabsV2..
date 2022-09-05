@@ -29,7 +29,7 @@ textarea {
      background: whitesmoke;
      width: 1px;
 }
- .tab {
+ .tab:not(.newtab) {
      padding: 0 8px;
      flex: 1 1 240px;
      min-width: 180px;
