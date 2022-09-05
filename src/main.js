@@ -129,8 +129,9 @@ function newTabBtn() {
 	newtab.style.minWidth = "25px !important";
 	newtab.style.fontSize = ('40px');
 	newtab.draggable = false;
+	newtab.classList.add('newtab')
 	newtab.onclick = function() {
-	   newtab.remove();
     	   newTabBtn();
+	   newtab.remove();
 	}
 }
