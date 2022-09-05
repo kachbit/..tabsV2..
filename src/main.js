@@ -128,7 +128,7 @@ function newTabBtn() {
 	newtab.style.maxWidth = "25px";
 	newtab.style.fontSize = ('40px');
 	newtab.draggable = false;
-	t.onclick = function() {
+	newtab.onclick = function() {
     	   newTabBtn()
 	}
 }
