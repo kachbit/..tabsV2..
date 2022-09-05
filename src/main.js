@@ -122,3 +122,13 @@ function newTab(text, content, type, path) {
 	tabbars[0].appendChild(e);
 	return e;
 }
+function newTabBtn() {
+	var newtab = newTab('+');
+	newtab.querySelector(".t-x").style.display = "none";
+	newtab.style.maxWidth = "25px";
+	newtab.style.fontSize = ('40px');
+	newtab.draggable = false;
+	t.onclick = function() {
+    	   newTabBtn()
+	}
+}
