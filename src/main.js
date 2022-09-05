@@ -126,9 +126,11 @@ function newTabBtn() {
 	var newtab = newTab('+');
 	newtab.querySelector(".t-x").style.display = "none";
 	newtab.style.maxWidth = "25px";
+	newtab.style.minWidth = "25px";
 	newtab.style.fontSize = ('40px');
 	newtab.draggable = false;
 	newtab.onclick = function() {
-    	   newTabBtn()
+	   newtab.remove();
+    	   newTabBtn();
 	}
 }
