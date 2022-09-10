@@ -130,6 +130,13 @@ function newTabBtn() {
 	newtab.style.fontSize = ('40px');
 	newtab.draggable = false;
 	newtab.classList.add('newtab')
+	
+	newtab.setAttribute("ondrop", "");
+	newtab.setAttribute("ondragover", "");
+	newtab.setAttribute("ondragstart", "");
+	newtab.setAttribute("onmousedown", "");
+	newtab.setAttribute("onmouseup", "");
+	
 	newtab.onclick = function() {
     	   newTabBtn();
 	   newtab.remove();
