@@ -51,4 +51,5 @@ var t = newTab('test')
 // removes the tab
 remTab(t)
 ```
+<br><br>I may implement this into react later on.<br><br>
 Took me around a day to make (4/23/22 sat)
