@@ -1,5 +1,5 @@
 [demo](https://kachbit.github.io/Tabs-UI/demo.html) <br>
-Embeddable sortable dynamic tabs. This was a fork of my previous tabs project which didn't really work at all and had way too many lines of code. This is the new and improved version that works much better and is written in much less code. It is based on a project I found on codepen ([https://codepen.io/mdcio/pen/eXppgR](https://codepen.io/mdcio/pen/eXppgR)). 
+Embeddable sortable dynamic tabs. This was a fork of my previous tabs project which didn't really work at all and had way too many lines of code. This is the new and improved version that works much better and is written in much less code. It is based on a project I found on codepen ([https://codepen.io/mdcio/pen/eXppgR](https://codepen.io/mdcio/pen/eXppgR)). This was designed to be very simple and easy to use and implement into anything, just like all of my other UI components
 
 Embedding the tabs:
 --------------------
@@ -51,5 +51,14 @@ var t = newTab('test')
 // removes the tab
 remTab(t)
 ```
-<br><br>I may implement this into react later on.<br><br>
+Methods:
+--------------------
+* ``select(tab)`` selects a given tab
+* ``remTab(tab)`` removes a given tab
+* ``selectedTab()`` returns the selected tab
+* ``tabList()`` returns a nodeList of all tabs
+* ``newTab(title, innerHTML)`` creates a new tab with given title, and sets the content of that tab to innerHTML
+* ``getPanel(tab)`` returns the corresponding content panel for a given tab 
+--------------------
+I may implement this into react later on.<br><br>
 Took me around a day to make (4/23/22 sat)
