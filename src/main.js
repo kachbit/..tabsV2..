@@ -7,7 +7,41 @@ const tabbars = [document.querySelector('#tabs')];
 tabbars[0].ondrop = () => barDrop(event)
 tabbars[0].ondragend = () => barEnd(event)
 tabbars[0].ondragover = () => barOver(event)
-
+function select(tab) {
+  tabClick(tab)
+}
+function getPanel(tab) {
+  return document.querySelector("#"+tab.panel)
+}
+function tabList() {
+  return tabbars[0].querySelectorAll(".tab");
+}
+function selectedTab(tabbar) {
+  if(tabbar) {
+    return tabbar.querySelector(".active.tab");
+  } else {
+    return tabbars[0].querySelector(".active.tab");
+  }
+}
+function updateTab() {
+  // if there is no selected tab, select the first one
+  if(!selectedTab(tabbars[0])) {   
+    tabClick("",tabbars[0].querySelector(".tab"));
+  }
+  // if tab does not match panel, reselect tab
+if(document.querySelector("#"+selectedTab(tabbars[0]).panel).style.visibility !== "visible") {
+    tabClick("",selectedTab(tabbars[0]));
+  }
+  // if there is more than one selected tab, unselect all and updateTab()
+  if(tabbars[0].querySelectorAll(".tab.active").length > 1) {
+  document.querySelectorAll(".tab.active").forEach(tab1 => tab1.classList.remove("active"));
+    updateTab()
+  }
+  // if tab is not selected, hide its panel
+  tabbars[0].querySelectorAll(".tab").forEach((tab1) => 
+ {tab1.classList.contains("active") ? getPanel(tab1).style.visibility = "visible" : getPanel(tab1).style.visibility = "hidden"                                       
+})
+}
 function tabClick(event, tab) {
 	const active = tabbars[0].querySelector(".tab.active");
 	if(active) {
@@ -22,6 +56,7 @@ function tabClick(event, tab) {
 		setTimeout(function() {
 			document.querySelector("#" + tab.panel).querySelector('textarea').focus()
 		}, 0);
+    updateTab()
 	}
 	//document.querySelector("#"+tab.panel).style.visibility = document.querySelector("#"+tab.panel).style.visibility === 'visible'? 'hidden': 'visible'
 }
@@ -34,6 +69,7 @@ function tabStart(event, tab) {
 	drag = event.target;
 	drag.classList.add("dragging");
 	tabbars[0].classList.add("dragging-in-progress");
+  updateTab()
 }
 
 function tabOver(event, tab) {
@@ -52,6 +88,7 @@ function tabDrop(event, tab) {
 	event.preventDefault();
 	event.stopPropagation();
 	swap(drag, tab);
+  updateTab()
 }
 
 function barOver(event) {
@@ -84,10 +121,13 @@ function swap(n1, n2) {
 	parent.insertBefore(n1, n2);
 	parent.insertBefore(n2, placeholder);
 	parent.removeChild(placeholder);
+  updateTab()
 }
 
 function remTab(tab) {
 	tab.remove()
+  getPanel(tab).remove()
+  updateTab()
 }
 var count = -1;
 
@@ -120,6 +160,7 @@ function newTab(text, content, type, path) {
 	}
 	document.querySelector('.boards').appendChild(p);
 	tabbars[0].appendChild(e);
+  updateTab()
 	return e;
 }
 function newTabBtn() {
@@ -141,4 +182,7 @@ function newTabBtn() {
     	   newTabBtn();
 	   newtab.remove();
 	}
+}
+tabbars[0].onload = () => {
+  setTimeOut(() => updateTab(), 500)
 }
