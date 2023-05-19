@@ -3,15 +3,15 @@ Embeddable sortable dynamic tabs. This was a fork of my previous tabs project wh
 
 Embedding the tabs:
 --------------------
-Include both the CSS file and the JavaScript file:
+Include the CSS file at the top of the page:
 ```html
 <link rel="stylesheet" href="src/main.css" type="text/css">
-<script src="./src/main.js"></script>
 ```
-Use these two DIVs to ititialize the tab bar:
+Use these two DIVs to ititialize the tab bar along with the .js file after:
 ```html
 <div id="tabs"></div>
 <div class='boards'></div>
+<script src="./src/main.js"></script>
 ```
 Use JavaScript to create some tabs that will be added to the tab bar:
 ```html
